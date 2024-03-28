@@ -20,3 +20,6 @@ EJS (Embedded JavaScript)
 HTML
 SQL Database (MySQL, Mysql workbench.)
 npm Packages (List any additional packages used)
+
+Image
+![Skärmbild 2024-03-28 210920](https://github.com/amanuelsen/SQL-CRUD/assets/128589263/d2bfe9fe-2890-45d4-ad18-904929543163)
