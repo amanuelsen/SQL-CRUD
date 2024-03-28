@@ -22,6 +22,8 @@ SQL Database (MySQL, Mysql workbench.)
 npm Packages (List any additional packages used)
 
 Image
-![Uploading Skärmbild 2024-03-28 210920.png…]()
+
+![imgeshop](https://github.com/amanuelsen/SQL-CRUD/assets/128589263/af1f49c5-e098-4524-82b3-f1c0e3a270db)
+
 
 
