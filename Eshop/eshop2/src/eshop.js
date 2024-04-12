@@ -154,7 +154,6 @@ async function createProduct(name, description, price, stock) {
     let productIdResult = await db.query(productIdQuery);
 
     console.log('productIdResult:', productIdResult[0].productId);
-    // Check the structure of productIdResult
 
     return productIdResult[0].productId;
 }
@@ -237,7 +236,7 @@ async function generateEventInstanceId() {
     return generateUUID();
 }
 async function addInventoryLog(id, eventDescription, eventDate) {
-    // Generate Event_instance_id
+
     const eventInstanceId = await generateEventInstanceId(id);
 
     const sql = 'CALL p_add_inventory_log_procedure(?, ?, ?)';
@@ -255,7 +254,6 @@ function getProductIDByProductName(productName) {
             if (error) {
                 reject(error);
             } else {
-                // If results are found, resolve with product_id, otherwise resolve with null
                 const productId = results.length > 0 ? results[0].product_id : null;
 
                 resolve(productId);
@@ -264,7 +262,6 @@ function getProductIDByProductName(productName) {
     });
 }
 
-// get all customers
 async function getCustomers() {
     let sql = `CALL p_show_all_customers();`;
     let res = await db.query(sql);
