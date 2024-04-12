@@ -254,8 +254,7 @@ router.get("/show/pro/:customer_id", async (req, res) => {
             title: "Show | eShop",
         };
 
-        // Your logic to fetch customer details using the customerId
-        // For example:
+        
         data.res = await eshop.getCustomerById(customerId); // Assuming you have a Customer model
         res.render("eshop/customer/customerinfo", data);
     } catch (error) {
@@ -277,11 +276,9 @@ router.get('/order/create/:id', async (req, res) => {
         const status = "Created";
         const TotalPrice = 0;
 
-        // Call function to create the order in the database
         await eshop.createOrder(formattedDate, TotalPrice,  CustomerID, status);
 
-        // Redirect to a success page or render a success message
-        res.redirect('/eshop/order'); // Corrected the URL for redirect
+        res.redirect('/eshop/order'); 
     } catch (error) {
         console.error("Error creating order:", error);
         res.status(500).send("Internal Server Error");
@@ -296,12 +293,12 @@ router.get("/order/show/:order_id", async (req, res) => {
 
         const data = {
             title: "Add product | eShop",
-            orderId: orderId // Include orderId in the data object
+            orderId: orderId 
         };
 
-        data.res = await eshop.getProductDetails(orderId); // Assuming you have a
-        // function to fetch order details
-        res.render("eshop/order/addproduct", data); // Pass data object to render function
+        data.res = await eshop.getProductDetails(orderId); 
+        
+        res.render("eshop/order/addproduct", data); 
     } catch (error) {
         console.error("Error fetching order details:", error);
         res.status(500).send("Internal Server Error");
@@ -318,7 +315,7 @@ router.get("/order/addtocart/:order_id", async (req, res) => {
             orderId: orderId
         };
 
-        data.res = await eshop.getProducts(); // Assuming you have a function to fetch products
+        data.res = await eshop.getProducts(); 
         res.render("eshop/order/addtocart", data);
     } catch (error) {
         console.error("Error fetching order details:", error);
